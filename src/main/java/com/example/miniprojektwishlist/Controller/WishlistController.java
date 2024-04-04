@@ -2,16 +2,21 @@ package com.example.miniprojektwishlist.Controller;
 
 import com.example.miniprojektwishlist.Model.WishlistAccount;
 import com.example.miniprojektwishlist.Service.WishlistService;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
+@Controller
 public class WishlistController {
+
+    public WishlistService wishlistService;
+
+
     @PostMapping("/register")
-    public void registerAccount( WishlistAccount register) {
-        WishlistService.registerAccount(register.getUsername(), register.getPassword());
+    public void registerAccount(WishlistAccount register) {
+        wishlistService.registerAccount(register.getUsername(), register.getPassword());
     }
     @PostMapping("/login")
     public boolean login(WishlistAccount loginToAccount) {
-        return WishlistService.login(loginToAccount.getUsername(), loginToAccount.getPassword());
+        return wishlistService.login(loginToAccount.getUsername(), loginToAccount.getPassword());
     }
 }

@@ -3,7 +3,9 @@ package com.example.miniprojektwishlist.Service;
 
 import com.example.miniprojektwishlist.Repository.WishlistRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class WishlistService {
 
     private static WishlistRepo wishlistRepo;

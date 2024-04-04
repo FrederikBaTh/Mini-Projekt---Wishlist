@@ -2,6 +2,7 @@ package com.example.miniprojektwishlist.Model;
 
 import java.util.List;
 
+
 public class WishlistModel {
 private int id;
     private String name;

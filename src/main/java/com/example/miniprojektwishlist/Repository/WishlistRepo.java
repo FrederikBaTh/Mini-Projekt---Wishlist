@@ -3,18 +3,16 @@ package com.example.miniprojektwishlist.Repository;
 import com.example.miniprojektwishlist.Model.WishlistAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-
+import org.springframework.stereotype.Repository;
 import java.util.List;
 
+@Repository
 public class WishlistRepo {
     public WishlistRepo() {
     }
 
-
-
-
     @Autowired
-    private static JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     public void registerAccount(String username, String password) {
         String sql = "INSERT INTO accounts (username, password) VALUES (?, ?)";
